@@ -2,15 +2,20 @@
   "name": "svg-icon",
   "version": "1.0.0",
   "description": "A customizable SVG icon package",
-  "keywords": ["svg", "icon", "customizable", "package"],
+  "keywords": [
+    "svg",
+    "icon",
+    "customizable",
+    "package"
+  ],
   "author": "tsb04",
   "license": "ISC",
-  
-  "main": "dist/index.cjs.js", 
+  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
-
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc && rollup -c",
@@ -18,29 +23,26 @@
     "prepublishOnly": "npm test",
     "test": "echo \"No tests yet!\""
   },
-
   "devDependencies": {
-    "typescript": "^5.0.0",
     "rollup": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.34.1"
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^5.0.0"
   },
-
   "peerDependencies": {
     "react": ">=17.0.0"
   },
-
   "engines": {
     "node": ">=14.0.0"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/tsb04/svg-icon.git"
   },
-
   "bugs": {
     "url": "https://github.com/tsb04/svg-icon/issues"
   },
-
-  "homepage": "https://github.com/tsb04/svg-icon#readme"
+  "homepage": "https://github.com/tsb04/svg-icon#readme",
+  "dependencies": {
+    "svg-icon": "file:"
+  }
 }

@@ -158,7 +158,7 @@ More icons coming soon! 🚀
 
 📬 Contact , Support & Feedback
 
-For issues, suggestions, or improvements, open an issue on GitHub: [GitHub Issues].[https://github.com/TSB04/svg-icon/issues]
+For issues, suggestions, or improvements, open an issue on GitHub: [GitHub Issues](https://github.com/TSB04/svg-icon/issues).
 
 Have a feature request? Open a discussion!
 

@@ -106,7 +106,7 @@ Written in TypeScript for type safety.
 
 📜 License
 
-This project is licensed under the ISC License. See the full LICENSE file for details.
+[This project is licensed under the ISC License. See the full LICENSE file for details.](./LICENSE)
 
 🛠 Development & Contribution
 We welcome contributions! Follow these steps to contribute:
@@ -144,10 +144,6 @@ git commit -m "Added new icon"
 
 Push & create a Pull Request on GitHub.
 
-📬 Contact & Support
-
-For issues, suggestions, or improvements, open an issue on GitHub: GitHub Issues
-
 🎨 Available Icons
 
 Each icon is exported as a raw SVG path and can be used with IconWrapper or any <svg> element.
@@ -159,6 +155,14 @@ Each icon is exported as a raw SVG path and can be used with IconWrapper or any 
 | ✉️ Mail   | `mailIconPath`  |
 
 More icons coming soon! 🚀
+
+📬 Contact , Support & Feedback
+
+For issues, suggestions, or improvements, open an issue on GitHub: [GitHub Issues].[https://github.com/TSB04/svg-icon/issues]
+
+Have a feature request? Open a discussion!
+
+Need help? Contact me via GitHub.
 
 ⭐ Like This Project? Give It a Star! If you found this useful, don’t forget to ⭐ star this repo on GitHub! 🚀
 

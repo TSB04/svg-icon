@@ -17,19 +17,27 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "build": "npm run clean && tsc && rollup -c",
     "prepare": "npm run build",
     "prepublishOnly": "npm test",
     "test": "echo \"No tests yet!\""
   },
   "devDependencies": {
-    "rollup": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "typescript": "^5.0.0"
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@rollup/plugin-typescript": "",
+    "@svgr/rollup": "^8.1.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "react": ">=17.0.0"
+    "react": ">=17.0.0",
+    "react-dom": "^18.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -44,5 +52,6 @@
   "homepage": "https://github.com/tsb04/svg-icon#readme",
   "dependencies": {
     "svg-icon": "file:"
-  }
+  },
+  "type": "module"
 }

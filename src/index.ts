@@ -1,2 +1,1 @@
-export { IconWrapper } from "./IconWrapper";
-// export { checkIconPath } from "./icons/check";
+export const placeholder = "svg-icon package";

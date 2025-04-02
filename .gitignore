@@ -39,3 +39,7 @@ out/
 
 # lock files
 package-lock.json
+
+# other
+/src/utils
+/src/utils/**

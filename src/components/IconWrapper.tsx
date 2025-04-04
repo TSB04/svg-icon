@@ -1,8 +1,4 @@
-import React, { FC,SVGProps } from "react";
-
-type FillRule = "evenodd" | "nonzero" | "inherit";
-
-interface IconWrapperProps extends SVGProps<SVGSVGElement> {
+export interface IconWrapperProps {
   className?: string;
   width?: string;
   height?: string;
@@ -10,45 +6,44 @@ interface IconWrapperProps extends SVGProps<SVGSVGElement> {
   fill?: string;
   stroke?: string;
   strokeWidth?: string;
-  fillRule?: FillRule;
+  fillRule?: "evenodd" | "nonzero" | "inherit";
   clipRule?: string;
-  path?: string;
+  path: string;
   pathFill?: string;
   clipPath?: string;
-  defsClipPath?: React.ReactNode;
   onClick?: () => void;
 }
 
-export const IconWrapper: FC<IconWrapperProps> = ({
-  className = "fill-current",
+export const IconWrapper = ({
+  className = "",
   width = "24",
   height = "24",
   viewBox = "0 0 24 24",
   fill = "none",
   stroke = "none",
   strokeWidth = "1",
-  path = "",
+  path,
   pathFill = "currentColor",
   fillRule = "evenodd",
   clipRule = "evenodd",
   clipPath = "",
-  defsClipPath = null,
   onClick,
-}) => (
-  <svg
-    className={className}
-    width={width}
-    height={height}
-    viewBox={viewBox}
-    fill={fill}
-    stroke={stroke}
-    strokeWidth={strokeWidth}
-    xmlns="http://www.w3.org/2000/svg"
-    onClick={onClick}
-  >
-    <g clipPath={clipPath}>
-      <path fill={pathFill} fillRule={fillRule} clipRule={clipRule} d={path} />
-    </g>
-    {defsClipPath}
-  </svg>
-);
+}: IconWrapperProps) => {
+  return `
+    <svg 
+      class="${className}" 
+      width="${width}" 
+      height="${height}" 
+      viewBox="${viewBox}" 
+      fill="${fill}" 
+      stroke="${stroke}" 
+      stroke-width="${strokeWidth}" 
+      xmlns="http://www.w3.org/2000/svg" 
+      onclick="${onClick ? `(${onClick.toString()})()` : ""}"
+    >
+      <g clip-path="${clipPath}">
+        <path fill="${pathFill}" fill-rule="${fillRule}" clip-rule="${clipRule}" d="${path}" />
+      </g>
+    </svg>
+  `;
+};

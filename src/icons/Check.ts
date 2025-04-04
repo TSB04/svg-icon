@@ -1,4 +1,3 @@
-import { IconWrapper } from './../components/IconWrapper';
 import { IconVariant, IconPaths } from "../types/icons";
 
 const checkIconPaths: IconPaths = {
@@ -14,8 +13,3 @@ export const getCheckIconPath = (variant: IconVariant = "default"): string => {
   return checkIconPaths[variant] ?? checkIconPaths.default;
 };
 
-
-// Default React Component Export
-// export const CheckIcon = ({ variant = "default" }: { variant?: IconVariant }) => (
-//   <IconWrapper path={getCheckIconPath(variant)} />
-// );

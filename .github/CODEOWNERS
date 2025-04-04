@@ -1,0 +1,19 @@
+# 📜 Code Owners File
+
+## 🎯 Purpose
+This file defines the default code owners for the repository.  
+All changes to files in this repository require at least one review from a code owner.
+
+---
+
+## 👥 Code Ownership
+- **All Files (`*`)**:  
+  Ownership is assigned to the following team:  
+  - @tsb04/admin
+
+---
+
+## 🔒 Review Requirement
+At least one code owner must approve any changes before they can be merged.  
+This ensures code quality, consistency, and accountability across the project.
+

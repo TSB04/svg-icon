@@ -1,5 +1,5 @@
 # **SVG Icon Package**
-A customizable and lightweight SVG icon package for React and other JavaScript frameworks.
+A framework-agnostic customizable and lightweight SVG icon package for React and other JavaScript frameworks.
 
 ---
 
@@ -17,12 +17,12 @@ Install the package via npm or yarn:
 
 ### **Using npm**
 ```sh
-npm install svg-icon
+npm install universal-svg-icons
 ```
 
 ### **Using yarn**
 ```sh
-yarn add svg-icon
+yarn add universal-svg-icons
 ```
 
 ---
@@ -33,7 +33,7 @@ Import the `IconWrapper` component and any available icon path:
 
 ```tsx
 import React from "react";
-import { IconWrapper, checkIconPath } from "svg-icon";
+import { IconWrapper, checkIconPath } from "universal-svg-icons";
 
 const App = () => (
   <IconWrapper path={checkIconPath} pathFill="black" width="32" height="32" />
@@ -46,7 +46,7 @@ export default App;
 If you are not using React, you can directly use the raw SVG path:
 
 ```js
-import { checkIconPath } from "svg-icon";
+import { checkIconPath } from "universal-svg-icons";
 const svgElement = `<svg width="24" height="24"><path d="${checkIconPath}" fill="black"/></svg>`;
 document.body.innerHTML = svgElement;
 ```
@@ -61,7 +61,7 @@ document.body.innerHTML = svgElement;
 </template>
 
 <script>
-import { checkIconPath } from "svg-icon";
+import { checkIconPath } from "universal-svg-icons";
 export default {
   data() {
     return {
@@ -82,7 +82,7 @@ export default {
 
 ```ts
 import { Component } from '@angular/core';
-import { checkIconPath } from "svg-icon";
+import { checkIconPath } from "universal-svg-icons";
 
 @Component({
   selector: 'app-root',
@@ -136,8 +136,8 @@ We welcome contributions! Follow these steps to contribute:
 
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/tsb04/svg-icon.git
-cd svg-icon
+git clone https://github.com/tsb04/universal-svg-icons.git
+cd universal-svg-icons
 ```
 
 ### **2️⃣ Install Dependencies**
@@ -173,7 +173,7 @@ Then, open a **Pull Request** on GitHub. 🚀
 ---
 
 ## 📬 **Contact, Support & Feedback**
-- Found an issue? Report it [here](https://github.com/TSB04/svg-icon/issues).
+- Found an issue? Report it [here](https://github.com/TSB04/universal-svg-icons/issues).
 - Have a feature request? Open a discussion!
 - Need help? Contact me via GitHub.
 
@@ -182,11 +182,11 @@ Then, open a **Pull Request** on GitHub. 🚀
 ## 🎨 **Available Icons**
 Each icon is exported as a raw SVG path and can be used with `IconWrapper` or any `<svg>` element.
 
-| Icon Name  | Import Name     |
-|------------|-----------------|
-| ✅ Check  | `checkIconPath` |
-| 👤 User   | `userIconPath`  |
-| ✉️ Mail   | `mailIconPath`  |
+| Icon Name               | Import Icon Path Name           |  Import JSX Icon                        |
+|-------------------------|---------------------------------|-----------------------------------------|
+| ✅ Check                | `getCheckIconPath`              |  <CheckIcon/>                           |
+| 👤 User                 | `getUserIconPath`               |  <UserIcon/>                            |
+| ✉️ Mail                 | `getMailIconPath`               |  <MailIcon/>                            |s
 
 ---
 

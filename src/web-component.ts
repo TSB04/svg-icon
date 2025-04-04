@@ -27,4 +27,4 @@ class SvgIconElement extends HTMLElement {
   }
 }
 
-customElements.define("svg-icon", SvgIconElement);
+customElements.define("universal-svg-icons", SvgIconElement);

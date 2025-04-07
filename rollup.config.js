@@ -7,6 +7,11 @@ import svgr from "@svgr/rollup";
 import fs from "fs";
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
+const externalDeps = [
+  ...Object.keys(pkg.peerDependencies || {}),
+  'react/jsx-runtime'
+];
+
 export default [
   {
     input: "src/index.ts",
@@ -20,7 +25,9 @@ export default [
       svgr(),
       typescript({ tsconfig: "./tsconfig.json" })
     ],
-    external: Object.keys(pkg.peerDependencies || {})
+    // external: Object.keys(pkg.peerDependencies || {})
+    external: externalDeps
+
   },
   {
     input: "src/index.ts",

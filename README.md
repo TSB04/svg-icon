@@ -97,7 +97,7 @@ checkIconPath = checkIconPath;
 
 ## 🛠️ API Reference
 
-| Prop             | Type                                     | Default            | Description                       |
+| Prop             | Type                                    | Default            | Description                       |
 |------------------|-----------------------------------------|--------------------|-----------------------------------|
 | `className`      | `string`                                | `"fill-current"`   | CSS classes for styling           |
 | `width`          | `string`                                | `"24"`             | Width of the SVG                  |
@@ -133,11 +133,12 @@ height="40"
 
 The package includes a variety of icons that can be imported as raw SVG paths or JSX components.
 
-| Icon Name       | Path Import Name       | JSX Component     |
-|------------------|------------------------|-------------------|
+| Icon Name         | Path Import Name       | JSX Component     |
+|-------------------|------------------------|-------------------|
 | ✅ Check         | `getCheckIconPath`     | `<CheckIcon />`   |
 | 👤 User          | `getUserIconPath`      | `<UserIcon />`    |
 | ✉️ Mail          | `getMailIconPath`      | `<MailIcon />`    |
+| 👁️ Eye           | `getEyeIconPath`       | `<EyeIcon />`     |
 
 **Example Usage:**
 

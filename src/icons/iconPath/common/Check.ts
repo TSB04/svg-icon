@@ -1,4 +1,4 @@
-import { IconVariant, IconPaths } from "../types/icons";
+import { IconVariant, IconPaths } from "../../../types/icons";
 
 const checkIconPaths: IconPaths = {
   default:
@@ -12,4 +12,3 @@ const checkIconPaths: IconPaths = {
 export const getCheckIconPath = (variant: IconVariant = "default"): string => {
   return checkIconPaths[variant] ?? checkIconPaths.default;
 };
-

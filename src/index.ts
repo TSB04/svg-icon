@@ -1,16 +1,12 @@
-//  framework-agnostic UI Icons components
+// framework-agnostic
 export { IconWrapper } from "./components/IconWrapper";
-export { getCheckIconPath } from "./icons/Check";
-export { getEyeIconPath } from "./icons/Eye";
-export { getMailIconPath } from "./icons/Mail";
-export { getUserIconPath } from "./icons/User";
 export { IconVariant } from "./types/icons";
+
+export * from "./icons/iconPath/brand";
+export * from "./icons/iconPath/common";
 
 export * from "./web-component";
 
-
-// framework-specific UI Icons components (jsx and tsx)
-export { UserIcon } from "./icons/jsx/UserIcon";
-export { EyeIcon } from "./icons/jsx/EyeIcon";
-export { MailIcon } from "./icons/jsx/MailIcon";
-export { CheckIcon } from "./icons/jsx/CheckIcon";
+// framework-specific
+export * from "./icons/iconPath/brand";
+export * from "./icons/jsx/common"; // JSX icon components

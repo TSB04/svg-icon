@@ -1,4 +1,4 @@
-import { IconVariant, IconPaths } from "../types/icons";
+import { IconVariant, IconPaths } from "../../../types/icons";
 
 const mailIconPaths: IconPaths = {
   default:

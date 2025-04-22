@@ -1,4 +1,4 @@
-import { IconVariant, IconPaths } from "../types/icons";
+import { IconVariant, IconPaths } from "../../../types/icons";
 
 const eyeIconPaths: IconPaths = {
   default:
@@ -10,4 +10,3 @@ const eyeIconPaths: IconPaths = {
 export const getEyeIconPath = (variant: IconVariant = "default"): string => {
   return eyeIconPaths[variant] ?? eyeIconPaths.default;
 };
-

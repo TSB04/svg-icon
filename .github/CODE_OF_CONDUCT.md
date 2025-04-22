@@ -22,7 +22,7 @@ Unacceptable behaviors include:
 ---
 
 ## 🛡️ Enforcement
-If you encounter behavior that violates this Code of Conduct, please report it to the project team at [contact@soinhaircare.com](mailto:contact@soinhaircare.com).  
+If you encounter behavior that violates this Code of Conduct, please report it to the project owner at [thierno.sadou.barry98@gmail.com](mailto:thierno.sadou.barry98@gmail.com).  
 
 Reports will be handled promptly and confidentially. The project team reserves the right to take appropriate action, including warnings or removal from the community.
 

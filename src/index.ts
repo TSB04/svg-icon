@@ -8,7 +8,6 @@ export { IconVariant } from "./types/icons";
 
 export * from "./web-component";
 
-
 // framework-specific UI Icons components (jsx and tsx)
 export { UserIcon } from "./icons/jsx/UserIcon";
 export { EyeIcon } from "./icons/jsx/EyeIcon";

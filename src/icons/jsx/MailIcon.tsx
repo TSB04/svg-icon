@@ -7,7 +7,15 @@ interface MailIconProps extends Omit<IconWrapperProps, "path"> {
   variant?: IconVariant;
 }
 
-export const MailIcon: React.FC<MailIconProps> = ({ variant = "default", ...props }) => {
-  return <div dangerouslySetInnerHTML={{ __html: IconWrapper({ ...props, path: getMailIconPath(variant) }) }} />;
+export const MailIcon: React.FC<MailIconProps> = ({
+  variant = "default",
+  ...props
+}) => {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: IconWrapper({ ...props, path: getMailIconPath(variant) }),
+      }}
+    />
+  );
 };
-

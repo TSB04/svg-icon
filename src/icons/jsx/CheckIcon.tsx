@@ -7,7 +7,15 @@ interface CheckIconProps extends Omit<IconWrapperProps, "path"> {
   variant?: IconVariant;
 }
 
-export const CheckIcon: React.FC<CheckIconProps> = ({ variant = "default", ...props }) => {
-  return <div dangerouslySetInnerHTML={{ __html: IconWrapper({ ...props, path: getCheckIconPath(variant) }) }} />;
+export const CheckIcon: React.FC<CheckIconProps> = ({
+  variant = "default",
+  ...props
+}) => {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: IconWrapper({ ...props, path: getCheckIconPath(variant) }),
+      }}
+    />
+  );
 };
-

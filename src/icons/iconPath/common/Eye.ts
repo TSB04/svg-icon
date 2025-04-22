@@ -10,4 +10,3 @@ const eyeIconPaths: IconPaths = {
 export const getEyeIconPath = (variant: IconVariant = "default"): string => {
   return eyeIconPaths[variant] ?? eyeIconPaths.default;
 };
-

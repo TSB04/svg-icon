@@ -9,7 +9,7 @@ const institutsIconPaths: IconPaths = {
 };
 
 export const getInstitutsIconPath = (
-  variant: IconVariant = "default"
+  variant: IconVariant = "default",
 ): string => {
   return institutsIconPaths[variant] ?? institutsIconPaths.default;
 };

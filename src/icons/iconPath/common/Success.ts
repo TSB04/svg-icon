@@ -9,7 +9,7 @@ const successIconPaths: IconPaths = {
 };
 
 export const getSuccessIconPath = (
-  variant: IconVariant = "default"
+  variant: IconVariant = "default",
 ): string => {
   return successIconPaths[variant] ?? successIconPaths.default;
 };

@@ -9,7 +9,7 @@ const warningIconPaths: IconPaths = {
 };
 
 export const getWarningIconPath = (
-  variant: IconVariant = "default"
+  variant: IconVariant = "default",
 ): string => {
   return warningIconPaths[variant] ?? warningIconPaths.default;
 };

@@ -7,6 +7,15 @@ interface UserIconProps extends Omit<IconWrapperProps, "path"> {
   variant?: IconVariant;
 }
 
-export const UserIcon: React.FC<UserIconProps> = ({ variant = "default", ...props }) => {
-  return <div dangerouslySetInnerHTML={{ __html: IconWrapper({ ...props, path: getUserIconPath(variant) }) }} />;
+export const UserIcon: React.FC<UserIconProps> = ({
+  variant = "default",
+  ...props
+}) => {
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: IconWrapper({ ...props, path: getUserIconPath(variant) }),
+      }}
+    />
+  );
 };

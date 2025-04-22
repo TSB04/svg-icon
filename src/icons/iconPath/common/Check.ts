@@ -12,4 +12,3 @@ const checkIconPaths: IconPaths = {
 export const getCheckIconPath = (variant: IconVariant = "default"): string => {
   return checkIconPaths[variant] ?? checkIconPaths.default;
 };
-

@@ -1,20 +1,20 @@
 import React from "react";
 import { IconWrapper, IconWrapperProps } from "../../../components/IconWrapper";
-import { getPreviousIconPath } from "../../iconPath/common/Previous";
+import { getProIconPath } from "../../iconPath/common/Pro";
 import { IconVariant } from "../../../types/icons";
 
-interface PreviousIconProps extends Omit<IconWrapperProps, "path"> {
+interface ProIconProps extends Omit<IconWrapperProps, "path"> {
   variant?: IconVariant;
 }
 
-export const PreviousIcon: React.FC<PreviousIconProps> = ({
+export const ProIcon: React.FC<ProIconProps> = ({
   variant = "default",
   ...props
 }) => {
   return (
     <div
       dangerouslySetInnerHTML={{
-        __html: IconWrapper({ ...props, path: getPreviousIconPath(variant) }),
+        __html: IconWrapper({ ...props, path: getProIconPath(variant) }),
       }}
     />
   );

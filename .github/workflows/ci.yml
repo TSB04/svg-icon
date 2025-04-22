@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Clean and install dependencies
-        run: npm run clean
+      # - name: Clean and install dependencies
+      #   run: npm run clean
 
       # - name: Run tests
       #   run: npm test

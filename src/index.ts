@@ -9,7 +9,7 @@ export { IconVariant } from "./types/icons";
 export * from "./web-component";
 
 // framework-specific UI Icons components (jsx and tsx)
-export { UserIcon } from "./icons/jsx/UserIcon";
-export { EyeIcon } from "./icons/jsx/EyeIcon";
-export { MailIcon } from "./icons/jsx/MailIcon";
-export { CheckIcon } from "./icons/jsx/CheckIcon";
+export { UserIcon } from "./icons/jsx/common/User";
+export { EyeIcon } from "./icons/jsx/common/Eye";
+export { MailIcon } from "./icons/jsx/common/Mail";
+export { CheckIcon } from "./icons/jsx/common/Check";

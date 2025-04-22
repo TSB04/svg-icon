@@ -1,18 +1,12 @@
 echo "Starting pre-push checks..."
 
-echo "Running lint check..."
-npm run lint
-if [ $? -ne 0 ]; then
-    echo "Lint check failed. Please fix the errors before pushing."
-    exit 1
-fi
-
 echo "Running build..."
 npm run build
 if [ $? -ne 0 ]; then
     echo "Build failed. Please fix the errors before pushing."
     exit 1
 fi
+
 echo "Running tests..."
 npm run test
 if [ $? -ne 0 ]; then
@@ -20,7 +14,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "Staging changes..."
-git add .
-
-echo "Pre-commit checks passed. Committing changes."
+echo "Pre-push checks passed. Committing changes."

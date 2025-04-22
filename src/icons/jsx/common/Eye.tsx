@@ -1,7 +1,7 @@
 import React from "react";
-import { IconWrapper, IconWrapperProps } from "../../components/IconWrapper";
-import { getEyeIconPath } from "../iconPath/common/Eye";
-import { IconVariant } from "../../types/icons";
+import { IconWrapper, IconWrapperProps } from "../../../components/IconWrapper";
+import { getEyeIconPath } from "../../iconPath/common/Eye";
+import { IconVariant } from "../../../types/icons";
 
 interface EyeIconProps extends Omit<IconWrapperProps, "path"> {
   variant?: IconVariant;

@@ -1,9 +1,9 @@
 //  framework-agnostic UI Icons components
 export { IconWrapper } from "./components/IconWrapper";
-export { getCheckIconPath } from "./icons/Check";
-export { getEyeIconPath } from "./icons/Eye";
-export { getMailIconPath } from "./icons/Mail";
-export { getUserIconPath } from "./icons/User";
+export { getCheckIconPath } from "./icons/iconPath/common/Check";
+export { getEyeIconPath } from "./icons/iconPath/common/Eye";
+export { getMailIconPath } from "./icons/iconPath/common/Mail";
+export { getUserIconPath } from "./icons/iconPath/common/User";
 export { IconVariant } from "./types/icons";
 
 export * from "./web-component";

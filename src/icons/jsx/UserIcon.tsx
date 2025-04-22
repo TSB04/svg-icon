@@ -1,6 +1,6 @@
 import React from "react";
 import { IconWrapper, IconWrapperProps } from "../../components/IconWrapper";
-import { getUserIconPath } from "../User";
+import { getUserIconPath } from "../iconPath/common/User";
 import { IconVariant } from "../../types/icons";
 
 interface UserIconProps extends Omit<IconWrapperProps, "path"> {

@@ -1,6 +1,6 @@
 import React from "react";
 import { IconWrapper, IconWrapperProps } from "../../components/IconWrapper";
-import { getMailIconPath } from "../Mail";
+import { getMailIconPath } from "../iconPath/common/Mail";
 import { IconVariant } from "../../types/icons";
 
 interface MailIconProps extends Omit<IconWrapperProps, "path"> {

@@ -17,10 +17,17 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf dist && rimraf node_modules && rimraf package-lock.json",
-    "build": "npm run clean && npm i && tsc && rollup -c",
+    "clean": "rimraf dist node_modules package-lock.json && npm cache clean --force && npm i",
+    "build": "npm run clean && tsc && rollup -c",
     "prepublishOnly": "npm test",
-    "test": "echo \"No tests yet!\""
+    "test": "echo \"No tests yet!\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.tsx": "eslint --fix",
+    "*.jsx": "eslint --fix"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.3",
@@ -50,6 +57,7 @@
   },
   "homepage": "https://github.com/tsb04/universal-svg-icons#readme",
   "dependencies": {
+    "husky": "^9.1.7",
     "lru-cache": "^11.1.0",
     "universal-svg-icons": "file:"
   },

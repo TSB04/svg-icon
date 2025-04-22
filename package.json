@@ -18,24 +18,30 @@
   ],
   "scripts": {
     "clean": "rimraf dist node_modules package-lock.json && npm cache clean --force && npm i",
+    "lint": "eslint . --fix --ext .js,.ts,.tsx,.jsx",
+    "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md}\"",
     "build": "npm run clean && tsc && rollup -c",
     "prepublishOnly": "npm test",
     "test": "echo \"No tests yet!\"",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.js": "eslint --fix",
-    "*.ts": "eslint --fix",
-    "*.tsx": "eslint --fix",
-    "*.jsx": "eslint --fix"
+    "*.{js,ts,jsx,tsx}": "eslint --fix"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.1",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "",
     "@svgr/rollup": "^8.1.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "prettier": "^3.5.3",
     "rollup": "^4.39.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-typescript2": "^0.36.0",

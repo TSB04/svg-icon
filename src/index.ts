@@ -8,5 +8,5 @@ export * from "./icons/iconPath/common";
 export * from "./web-component";
 
 // framework-specific
-export * from "./icons/iconPath/brand";
+export * from "./icons/jsx/brand";
 export * from "./icons/jsx/common"; // JSX icon components

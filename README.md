@@ -133,12 +133,40 @@ height="40"
 
 The package includes a variety of icons that can be imported as raw SVG paths or JSX components.
 
-| Icon Name         | Path Import Name       | JSX Component     |
-|-------------------|------------------------|-------------------|
-| ✅ Check         | `getCheckIconPath`     | `<CheckIcon />`   |
-| 👤 User          | `getUserIconPath`      | `<UserIcon />`    |
-| ✉️ Mail          | `getMailIconPath`      | `<MailIcon />`    |
-| 👁️ Eye           | `getEyeIconPath`       | `<EyeIcon />`     |
+| Icon Name            | Path Import Name         | JSX Component          |
+|----------------------|--------------------------|------------------------|
+| ✅ Check            | `getCheckIconPath`       | `<CheckIcon />`        |
+| 👤 User             | `getUserIconPath`        | `<UserIcon />`         |
+| ✉️ Mail             | `getMailIconPath`        | `<MailIcon />`         |
+| 👁️ Eye              | `getEyeIconPath`         | `<EyeIcon />`          |
+| 🛡️ Admin            | `getAdminIconPath`       | `<AdminIcon />`        |
+| 🏀 Basketball       | `getBasketBallIconPath`  | `<BasketBallIcon />`   |
+| 📅 Calendar         | `getCalendarIconPath`    | `<CalendarIcon />`     |
+| 📷 Cam              | `getCamIconPath`         | `<CamIcon />`          |
+| 📊 Chart            | `getChartIconPath`       | `<ChartIcon />`        |
+| 💬 Chat             | `getChatIconPath`        | `<ChatIcon />`         |
+| ⏰ Clock            | `getClockIconPath`       | `<ClockIcon />`        |
+| 📇 Contact          | `getContactIconPath`     | `<ContactIcon />`      |
+| 📉 Dashboard        | `getDashboardIconPath`   | `<DashboardIcon />`    |
+| ❌ Error            | `getErrorIconPath`       | `<ErrorIcon />`        |
+| 📝 Form             | `getFormIconPath`        | `<FormIcon />`         |
+| ℹ️ Info             | `getInfoIconPath`        | `<InfoIcon />`         |
+| 🏫 Instituts        | `getInstitutsIconPath`   | `<InstitutsIcon />`    |
+| 🔒 Lock             | `getLockIconPath`        | `<LockIcon />`         |
+| ☰ Menu              | `getMenuIconPath`        | `<MenuIcon />`         |
+| ➡️ Next             | `getNextIconPath`        | `<NextIcon />`         |
+| ✒️ Pen              | `getPenIconPath`         | `<PenIcon />`          |
+| 📞 Phone            | `getPhoneIconPath`       | `<PhoneIcon />`        |
+| ⬅️ Previous         | `getPreviousIconPath`    | `<PreviousIcon />`     |
+| 👨‍💼 Pro              | `getProIconPath`         | `<ProIcon />`          |
+| 🧑 Profil           | `getProfilIconPath`      | `<ProfilIcon />`       |
+| ⚙️ Settings         | `getSettingsIconPath`    | `<SettingsIcon />`     |
+| ✅ Success          | `getSuccessIconPath`     | `<SuccessIcon />`      |
+| 📋 Table            | `getTableIconPath`       | `<TableIcon />`        |
+| 🔤 Text             | `getTextIconPath`        | `<TextIcon />`         |
+| 🧩 UI               | `getUiIconPath`          | `<UiIcon />`           |
+| ⚠️ Warning          | `getWarningIconPath`     | `<WarningIcon />`      |
+
 
 **Example Usage:**
 
@@ -207,7 +235,5 @@ This project is licensed under the [ISC License](./LICENSE).
 If you found this project useful, don’t forget to ⭐ star it on GitHub. Made with ❤️ by **tsb04**. Happy coding! 🎉
 
 ---
-
-You can now save this content as a file named **README.md**. Let me know if you need assistance with creating or downloading it!
 
 <div>⁂</div>

@@ -29,7 +29,6 @@ dist/
 build/
 out/
 
-
 # Temporary files
 *.tmp
 *.swp
@@ -39,6 +38,9 @@ out/
 
 # lock files
 package-lock.json
+
+# environment variables
+.env
 
 # other
 /src/utils

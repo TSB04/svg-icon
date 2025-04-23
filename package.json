@@ -1,6 +1,6 @@
 {
   "name": "universal-svg-icons",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",
@@ -20,7 +20,7 @@
     "clean": "rimraf dist node_modules package-lock.json && npm cache clean --force && npm i",
     "lint": "eslint . --fix --ext .js,.ts,.tsx,.jsx",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md}\"",
-    "build": "npm run clean && tsc && rollup -c",
+    "build": "tsc && rollup -c",
     "prepublishOnly": "npm test",
     "test": "echo \"No tests yet!\"",
     "prepare": "husky"

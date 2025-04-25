@@ -1,6 +1,6 @@
 {
-  "name": "universal-svg-icons-temp",
-  "version": "0.0.2",
+  "name": "universal-svg-icon",
+  "version": "0.0.1",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",
@@ -65,7 +65,7 @@
   "dependencies": {
     "husky": "^9.1.7",
     "lru-cache": "^11.1.0",
-    "universal-svg-icons-temp": "file:"
+    "universal-svg-icon": "file:"
   },
   "type": "module"
 }

@@ -1,4 +1,3 @@
-// src/web-component.ts
 import { getCheckIconPath } from "./icons/iconPath/common/Check";
 import { IconVariant } from "./types/icons";
 

@@ -214,6 +214,8 @@ git commit -m "Added new icon"
 git push origin feature/new-icon
 Then open a pull request on GitHub. 🚀
 
+
+
 ---
 
 ## 📜 License

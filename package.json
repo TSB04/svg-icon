@@ -1,6 +1,6 @@
 {
   "name": "universal-svg-icon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",

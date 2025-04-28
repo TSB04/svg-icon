@@ -1,3 +1,6 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import path from "path"; // <-- You forgot this
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
@@ -5,23 +8,35 @@ import dts from "rollup-plugin-dts";
 import svgr from "@svgr/rollup";
 import fs from "fs";
 
+// Fix __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
+// External dependencies (not bundled)
 const externalDeps = [
   ...Object.keys(pkg.peerDependencies || {}),
   "react/jsx-runtime",
 ];
 
-// All entrypoints you want to build
+// Find all folders in src/icons/jsx/
+const jsxDir = path.resolve(__dirname, "src/icons/jsx");
+const folders = fs.readdirSync(jsxDir).filter((name) => {
+  const fullPath = path.join(jsxDir, name);
+  return fs.statSync(fullPath).isDirectory();
+});
+
+// Create entries dynamically
 const entries = [
   { input: "src/index.ts", outputName: "index" },
   { input: "src/icons/iconPath/path.ts", outputName: "path" },
-  { input: "src/icons/jsx/brand.ts", outputName: "brand" },
-  { input: "src/icons/jsx/page.ts", outputName: "page" },
-  { input: "src/icons/jsx/shape.ts", outputName: "shape" },
+  ...folders.map((folder) => ({
+    input: `src/icons/jsx/${folder}/index.ts`,
+    outputName: folder,
+  })),
 ];
 
-// Base plugins for code
 const basePlugins = [
   resolve(),
   commonjs(),
@@ -29,9 +44,8 @@ const basePlugins = [
   typescript({ tsconfig: "./tsconfig.json" }),
 ];
 
-// Generate Rollup configs dynamically
+// Build configs dynamically
 const builds = entries.flatMap(({ input, outputName }) => [
-  // JS build (CJS + ESM)
   {
     input,
     output: [
@@ -41,7 +55,6 @@ const builds = entries.flatMap(({ input, outputName }) => [
     plugins: basePlugins,
     external: externalDeps,
   },
-  // DTS build
   {
     input,
     output: [{ file: `dist/${outputName}.d.ts`, format: "es" }],

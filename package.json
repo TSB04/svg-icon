@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist node_modules package-lock.json && npm cache clean --force && npm i",
-    "lint": "eslint . --fix --ext .js,.ts,.tsx,.jsx",
+    "lint": "eslint ./src --fix --ext .js,.ts,.tsx,.jsx",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md}\"",
     "build": "tsc && rollup -c",
     "prepublishOnly": "npm test",

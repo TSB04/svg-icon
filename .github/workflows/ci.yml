@@ -2,9 +2,9 @@ name: 🧪 Continuous Integration
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
   pull_request:
-    branches: [master]
+    branches: [master, main]
 
 jobs:
   build:
@@ -20,8 +20,11 @@ jobs:
 
       - run: npm ci
 
-      - run: npm test
-        name: ✅ Run tests
+      - name: ✅ Run tests
+        run: npm test
 
-      - run: npm run lint
-        name: 🧹 Lint code
+      - name: 🧹 Run lint
+        run: npm run lint
+
+      - name: 🔨 Build project
+        run: npm run build

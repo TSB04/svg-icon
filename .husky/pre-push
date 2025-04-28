@@ -1,24 +1,27 @@
-echo "Starting pre-push checks..."
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-# Check if the current branch is master
+# Configurable protected branch (default: master)
+PROTECTED_BRANCH=${PROTECTED_BRANCH:-master}
+
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-if [ "$current_branch" != "master" ]; then
-    echo "Not on master branch. Skipping pre-push checks."
-    exit 0
+echo "🔎 Current branch: $current_branch"
+
+if [ "$current_branch" != "$PROTECTED_BRANCH" ]; then
+  echo "✅ Not on protected branch ($PROTECTED_BRANCH). Skipping heavy checks."
+  exit 0
 fi
 
-echo "Running build..."
-npm run build
-if [ $? -ne 0 ]; then
-    echo "Build failed. Please fix the errors before pushing."
-    exit 1
-fi
+echo "🛠 Running build..."
+npm run build || {
+  echo "❌ Build failed. Please fix before pushing."
+  exit 1
+}
 
-echo "Running tests..."
-npm run test
-if [ $? -ne 0 ]; then
-    echo "Tests failed. Please fix the errors before pushing."
-    exit 1
-fi
+echo "🧪 Running tests..."
+npm run test || {
+  echo "❌ Tests failed. Please fix before pushing."
+  exit 1
+}
 
-echo "Pre-push checks passed. Committing changes."
+echo "✅ Pre-push checks passed."

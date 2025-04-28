@@ -36,9 +36,6 @@ out/
 *.orig
 *.rej
 
-# lock files
-package-lock.json
-
 # environment variables
 .env
 

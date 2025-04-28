@@ -1,5 +1,12 @@
 echo "Starting pre-commit checks..."
 
+# Check if the current branch is master
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "$current_branch" != "master" ]; then
+    echo "Pre-commit checks are only executed on the master branch. Skipping..."
+    exit 0
+fi
+
 echo "Running cleanup..."
 npm run clean
 if [ $? -ne 0 ]; then

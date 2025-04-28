@@ -27,3 +27,7 @@ export { TextIcon } from "./Text";
 export { UiIcon } from "./Ui";
 export { UserIcon } from "./User";
 export { WarningIcon } from "./Warning";
+
+export { FaqIcon } from "./Faq";
+export { PortalIcon } from "./Portal";
+export { DotsIcon } from "./Dots";

@@ -1,6 +1,6 @@
 import { Theme } from "../../../types/icons";
 
-const Maintenance = ({ theme = "light" }: { theme: Theme }) => {
+export const MaintenancePageIcon = ({ theme = "light" }: { theme: Theme }) => {
   const fillColor = theme === "dark" ? "#7592FF" : "#465FFF";
 
   return (
@@ -32,5 +32,3 @@ const Maintenance = ({ theme = "light" }: { theme: Theme }) => {
     </svg>
   );
 };
-
-export default Maintenance;

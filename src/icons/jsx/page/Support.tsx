@@ -1,6 +1,4 @@
-import React from "react";
-
-const Support = () => {
+export const SupportPageIcon = () => {
   return (
     <svg
       width="32px"
@@ -135,5 +133,3 @@ const Support = () => {
     </svg>
   );
 };
-
-export default Support;

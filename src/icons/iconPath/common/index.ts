@@ -29,3 +29,7 @@ export { getTextIconPath } from "./Text";
 export { getUiIconPath } from "./Ui";
 export { getUserIconPath } from "./User";
 export { getWarningIconPath } from "./Warning";
+
+export { getFaqIconPath } from "./Faq";
+export { getPortalIconPath } from "./Portal";
+export { getDotsIconPath } from "./Dots";

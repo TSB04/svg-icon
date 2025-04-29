@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - release
-  pull_request:
-    branches:
-      - release
-  
 
 jobs:
   bump-and-pr:
@@ -16,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: release
           fetch-depth: 0
 
       - uses: actions/setup-node@v3
@@ -26,16 +21,17 @@ jobs:
 
       - run: npm ci
 
-      - name: Bump Patch Version
+      - name: 🔼 Bump Patch Version
         run: npm version patch --no-git-tag-version
 
-      - name: Commit Version Bump
+      - name: ✅ Commit Version Bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -am "chore: bump version"
-      
-      - name: Create PR
+          git add package.json package-lock.json
+          git commit -m "chore: bump version"
+
+      - name: 📬 Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           branch: auto-release

@@ -1,11 +1,11 @@
 name: 🏷️ Tag Merged Version
 
 on:
-  push:
-    branches:
-      - release
   pull_request:
     types: [closed]
+    branches:
+      - release
+  push:
     branches:
       - release
 
@@ -14,10 +14,18 @@ jobs:
     if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      packages: write
+
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Required to create and push tags
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: 🔢 Extract package version
         id: extract
@@ -27,7 +35,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v${VERSION}" || echo "Tag already exists: v${VERSION}"
+          git tag "v${VERSION}" || echo "Tag v${VERSION} already exists."
           git push origin "v${VERSION}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

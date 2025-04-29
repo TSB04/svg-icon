@@ -1,0 +1,48 @@
+name: 🚀 CD to npmjs
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: release
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - run: npm version patch --no-git-tag-version
+
+      - run: 'git commit -am "chore: bump version"'
+
+      - name: Create release PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: auto-release
+          base: release
+          title: "chore: automated release"
+          body: "This PR was created automatically by GitHub Actions for a release."
+          commit-message: "chore: bump version"

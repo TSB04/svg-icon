@@ -2,12 +2,13 @@ name: 🧪 Continuous Integration
 
 on:
   push:
-    branches: [master, main]
+    branches: [master]
   pull_request:
-    branches: [master, main]
+    branches: [master]
 
 jobs:
-  build:
+  ci:
+    name: 🧪 CI - Test, Lint & Build
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +19,13 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - run: npm ci
+      - name: 📦 Install dependencies
+        run: npm ci
 
       - name: ✅ Run tests
         run: npm test
 
-      - name: 🧹 Run lint
+      - name: 🧹 Lint code
         run: npm run lint
 
       - name: 🔨 Build project

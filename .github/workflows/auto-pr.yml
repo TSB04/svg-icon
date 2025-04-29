@@ -1,4 +1,4 @@
-name: 🚀 CD to npmjs
+name: 🚀 Auto PR - Bump Version
 
 on:
   push:
@@ -6,12 +6,8 @@ on:
       - release
 
 jobs:
-  prepare-release:
+  bump-and-pr:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
@@ -23,26 +19,23 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          registry-url: https://registry.npmjs.org
 
       - run: npm ci
 
-      - run: npm run build
+      - name: Bump Patch Version
+        run: npm version patch --no-git-tag-version
 
-      - name: Configure Git
+      - name: Commit Version Bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - run: npm version patch --no-git-tag-version
-
-      - run: 'git commit -am "chore: bump version"'
-
-      - name: Create release PR
+          git commit -am "chore: bump version"
+      
+      - name: Create PR
         uses: peter-evans/create-pull-request@v5
         with:
           branch: auto-release
           base: release
-          title: "chore: automated release"
-          body: "This PR was created automatically by GitHub Actions for a release."
+          title: "chore: automated version bump"
+          body: "This PR bumps the version and prepares the package for release."
           commit-message: "chore: bump version"

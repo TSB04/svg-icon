@@ -1,47 +1,28 @@
-import { fileURLToPath } from "url";
-import { dirname, resolve as resolvePath, join, extname } from "path";
-import fs from "fs";
+/* eslint-disable */
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 import svgr from "@svgr/rollup";
+import fs from "fs";
 
-// Fix __dirname for ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+// Read peerDependencies from package.json
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
-
-// External dependencies (not bundled)
 const externalDeps = [
   ...Object.keys(pkg.peerDependencies || {}),
   "react/jsx-runtime",
 ];
 
-// Collect all .ts files in src/icons/jsx (excluding index files)
-const jsxDir = resolvePath(__dirname, "src/icons/jsx");
-const jsxEntries = fs.readdirSync(jsxDir)
-  .filter((name) => {
-    const fullPath = join(jsxDir, name);
-    const isFile = fs.statSync(fullPath).isFile();
-    return isFile && extname(name) === ".ts";
-  })
-  .map((file) => ({
-    input: `src/icons/jsx/${file}`,
-    outputName: file.replace(/\.ts$/, "")
-  }));
-
-// Base entries
-const baseEntries = [
+// Manually defined entries
+const entries = [
   { input: "src/index.ts", outputName: "index" },
   { input: "src/icons/iconPath/path.ts", outputName: "path" },
+  { input: "src/icons/jsx/brand.ts", outputName: "brand" },
+  { input: "src/icons/jsx/page.ts", outputName: "page" },
+  { input: "src/icons/jsx/shape.ts", outputName: "shape" },
 ];
 
-// Combine all entries
-const entries = [...baseEntries, ...jsxEntries];
-
-// Shared plugins for JS builds
+// Shared JS build plugins
 const basePlugins = [
   resolve(),
   commonjs(),
@@ -49,9 +30,8 @@ const basePlugins = [
   typescript({ tsconfig: "./tsconfig.json" }),
 ];
 
-// Build configs
+// Generate JS + DTS builds
 const builds = entries.flatMap(({ input, outputName }) => [
-  // JS (CJS + ESM)
   {
     input,
     output: [
@@ -61,7 +41,6 @@ const builds = entries.flatMap(({ input, outputName }) => [
     plugins: basePlugins,
     external: externalDeps,
   },
-  // Type declarations
   {
     input,
     output: [{ file: `dist/${outputName}.d.ts`, format: "es" }],

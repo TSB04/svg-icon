@@ -1,4 +1,4 @@
-export const GridSVG = () => (
+export const GridShapeIcon = () => (
   <svg
     width="450"
     height="254"

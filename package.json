@@ -1,6 +1,6 @@
 {
   "name": "universal-svg-icon",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",
@@ -78,20 +78,16 @@
       "require": "./dist/path.cjs"
     },
     "./brand": {
-      "import": "./dist/jsx/brand/index.mjs",
-      "require": "./dist/jsx/brand/index.cjs"
-    },
-    "./common": {
-      "import": "./dist/jsx/common/index.mjs",
-      "require": "./dist/jsx/common/index.cjs"
+      "import": "./dist/brand/index.mjs",
+      "require": "./dist/brand/index.cjs"
     },
     "./page": {
-      "import": "./dist/jsx/page/index.mjs",
-      "require": "./dist/jsx/page/index.cjs"
+      "import": "./dist/page/index.mjs",
+      "require": "./dist/page/index.cjs"
     },
     "./shape": {
-      "import": "./dist/jsx/shape/index.mjs",
-      "require": "./dist/jsx/shape/index.cjs"
+      "import": "./dist/shape/index.mjs",
+      "require": "./dist/shape/index.cjs"
     }
   }
 }

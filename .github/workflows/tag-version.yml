@@ -5,25 +5,29 @@ on:
     branches:
       - release
   pull_request:
+    types: [closed]
     branches:
       - release
 
 jobs:
   tag-version:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Required to create and push tags
 
-      - name: Extract Version
+      - name: 🔢 Extract package version
         id: extract
-        run: echo "VERSION=$(node -p \"require('./package.json').version\")" >> $GITHUB_ENV
+        run: echo "VERSION=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_ENV
 
-      - name: Tag New Version
+      - name: 🏷️ Tag and Push Version
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v${VERSION}"
+          git tag "v${VERSION}" || echo "Tag already exists: v${VERSION}"
           git push origin "v${VERSION}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -78,16 +78,16 @@
       "require": "./dist/path.cjs"
     },
     "./brand": {
-      "import": "./dist/brand/index.mjs",
-      "require": "./dist/brand/index.cjs"
+      "import": "./dist/brand.mjs",
+      "require": "./dist/brand.cjs"
     },
     "./page": {
-      "import": "./dist/page/index.mjs",
-      "require": "./dist/page/index.cjs"
+      "import": "./dist/page.mjs",
+      "require": "./dist/page.cjs"
     },
     "./shape": {
-      "import": "./dist/shape/index.mjs",
-      "require": "./dist/shape/index.cjs"
+      "import": "./dist/shape.mjs",
+      "require": "./dist/shape.cjs"
     }
   }
 }

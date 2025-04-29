@@ -14,16 +14,17 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "clean": "rimraf dist node_modules package-lock.json && npm cache clean --force && npm i",
     "lint": "eslint ./src --fix --ext .js,.ts,.tsx,.jsx",
     "format": "prettier --write \"**/*.{js,ts,tsx,jsx,json,md}\"",
     "build": "tsc && rollup -c",
-    "prepublishOnly": "npm test",
-    "test": "echo \"No tests yet!\"",
-    "prepare": "husky"
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet!\""
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint --fix"

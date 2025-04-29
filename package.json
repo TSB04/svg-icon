@@ -71,13 +71,27 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     },
     "./path": {
       "import": "./dist/path.mjs",
-      "require": "./dist/path.cjs",
-      "types": "./dist/path.d.ts"
+      "require": "./dist/path.cjs"
+    },
+    "./brand": {
+      "import": "./dist/jsx/brand/index.mjs",
+      "require": "./dist/jsx/brand/index.cjs"
+    },
+    "./common": {
+      "import": "./dist/jsx/common/index.mjs",
+      "require": "./dist/jsx/common/index.cjs"
+    },
+    "./page": {
+      "import": "./dist/jsx/page/index.mjs",
+      "require": "./dist/jsx/page/index.cjs"
+    },
+    "./shape": {
+      "import": "./dist/jsx/shape/index.mjs",
+      "require": "./dist/jsx/shape/index.cjs"
     }
   }
 }

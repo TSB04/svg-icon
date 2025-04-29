@@ -41,6 +41,7 @@
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
+    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "rollup": "^4.39.0",
     "rollup-plugin-dts": "^6.2.1",
@@ -63,7 +64,6 @@
   },
   "homepage": "https://github.com/tsb04/universal-svg-icons#readme",
   "dependencies": {
-    "husky": "^9.1.7",
     "lru-cache": "^11.1.0",
     "universal-svg-icon": "file:"
   },

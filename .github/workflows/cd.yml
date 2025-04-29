@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - release
-  pull_request:
-    branches:
-      - release
 
 jobs:
   deploy:
@@ -18,14 +15,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: release
+          fetch-depth: 0 # ensures you get full history, needed for git push --tags
 
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
           registry-url: https://registry.npmjs.org
 
       - run: npm ci
+
       - run: npm run build
 
       - name: Configure Git
@@ -33,11 +34,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Bump version
-        run: npm version patch
+      - run: npm version patch
 
-      - name: Push version bump
-        run: git push && git push --tags
+      - run: git push && git push --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

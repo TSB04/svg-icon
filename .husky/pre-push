@@ -1,5 +1,4 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+echo "🔎 Starting pre-push checks..."
 
 # Configurable protected branch (default: master)
 PROTECTED_BRANCH=${PROTECTED_BRANCH:-master}

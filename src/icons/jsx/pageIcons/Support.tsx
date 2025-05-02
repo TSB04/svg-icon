@@ -1,9 +1,9 @@
 export const SupportPageIcon = () => {
   return (
     <svg
-      width="32px"
-      height="32px"
-      viewBox="0 0 64 64"
+      width="212px"
+      height="212px"
+      viewBox="0 0 212 212"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       className="-mt-2"

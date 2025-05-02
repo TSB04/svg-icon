@@ -60,7 +60,7 @@ export default function App() {
 Use `IconWrapper` in plain JavaScript by building the SVG element manually:
 
 ```js
-import { getCheckIconPath } from "universal-svg-icons";
+import { getCheckIconPath } from "universal-svg-icons/path";
 
 const svgElement = `<svg width="24" height="24"><path d="${getCheckIconPath()}" fill="black"/></svg>`;
 document.body.innerHTML = svgElement;
@@ -76,7 +76,7 @@ Use the path directly or register the icon as a component:
 </template>
 
 <script>
-import { getCheckIconPath } from "universal-svg-icons";
+import { getCheckIconPath } from "universal-svg-icons/path";
 export default {
   data() {
     return { checkIconPath: getCheckIconPath() };
@@ -101,7 +101,7 @@ Use property binding in templates:
 
 ```ts
 import { Component } from "@angular/core";
-import { getCheckIconPath } from "universal-svg-icons";
+import { getCheckIconPath } from "universal-svg-icons/path";
 
 @Component({
   selector: "app-root",

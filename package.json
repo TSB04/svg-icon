@@ -1,6 +1,6 @@
 {
   "name": "universal-svg-icon-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",
@@ -77,6 +77,10 @@
     "./path": {
       "import": "./dist/path.mjs",
       "require": "./dist/path.cjs"
+    },
+    "./web-component": {
+      "import": "./dist/web-component.mjs",
+      "require": "./dist/web-component.cjs"
     },
     "./brand": {
       "import": "./dist/brand.mjs",

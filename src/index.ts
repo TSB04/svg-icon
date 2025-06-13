@@ -1,5 +1,5 @@
 // framework-agnostic
-export { IconWrapper } from "./components/IconWrapper";
+// export { IconWrapper } from "./components/IconWrapper";
 export { IconVariant } from "./types/icons";
 
 // framework-specific

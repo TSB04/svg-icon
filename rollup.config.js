@@ -22,17 +22,19 @@ const externalDeps = [
 
 // === Auto-generate entries ===
 const jsxDir = resolvePath(__dirname, "src/icons/jsx");
-const jsxEntries = fs.readdirSync(jsxDir)
-  .filter(file => extname(file) === ".ts")
-  .map(file => ({
+const jsxEntries = fs
+  .readdirSync(jsxDir)
+  .filter((file) => extname(file) === ".ts")
+  .map((file) => ({
     input: `src/icons/jsx/${file}`,
-    outputName: file.replace(/\.ts$/, "")
+    outputName: file.replace(/\.ts$/, ""),
   }));
 
 // === Manually specified entries ===
 const staticEntries = [
   { input: "src/index.ts", outputName: "index" },
   { input: "src/icons/iconPath/path.ts", outputName: "path" },
+  { input: "src/components/index.ts", outputName: "component" },
   { input: "src/web-component.ts", outputName: "web-component" },
 ];
 

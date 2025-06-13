@@ -1,42 +1,45 @@
+/* eslint-disable */
 import { fileURLToPath } from "url";
-import { dirname } from "path";
-import path from "path"; // <-- You forgot this
+import { dirname, resolve as resolvePath, join, extname } from "path";
+import fs from "fs";
+
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 import svgr from "@svgr/rollup";
-import fs from "fs";
 
-// Fix __dirname for ESM
+// Fix __dirname in ESM context
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Load package.json for peerDeps
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
-
-// External dependencies (not bundled)
 const externalDeps = [
   ...Object.keys(pkg.peerDependencies || {}),
   "react/jsx-runtime",
 ];
 
-// Find all folders in src/icons/jsx/
-const jsxDir = path.resolve(__dirname, "src/icons/jsx");
-const folders = fs.readdirSync(jsxDir).filter((name) => {
-  const fullPath = path.join(jsxDir, name);
-  return fs.statSync(fullPath).isDirectory();
-});
+// === Auto-generate entries ===
+const jsxDir = resolvePath(__dirname, "src/icons/jsx");
+const jsxEntries = fs.readdirSync(jsxDir)
+  .filter(file => extname(file) === ".ts")
+  .map(file => ({
+    input: `src/icons/jsx/${file}`,
+    outputName: file.replace(/\.ts$/, "")
+  }));
 
-// Create entries dynamically
-const entries = [
+// === Manually specified entries ===
+const staticEntries = [
   { input: "src/index.ts", outputName: "index" },
   { input: "src/icons/iconPath/path.ts", outputName: "path" },
-  ...folders.map((folder) => ({
-    input: `src/icons/jsx/${folder}/index.ts`,
-    outputName: folder,
-  })),
+  { input: "src/web-component.ts", outputName: "web-component" },
 ];
 
+// === Combine all entries ===
+const entries = [...staticEntries, ...jsxEntries];
+
+// === Common JS plugins ===
 const basePlugins = [
   resolve(),
   commonjs(),
@@ -44,7 +47,7 @@ const basePlugins = [
   typescript({ tsconfig: "./tsconfig.json" }),
 ];
 
-// Build configs dynamically
+// === Generate output configs ===
 const builds = entries.flatMap(({ input, outputName }) => [
   {
     input,

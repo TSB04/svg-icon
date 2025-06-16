@@ -108,6 +108,60 @@ export class AppComponent {
   checkIconPath = getCheckIconPath();
 }
 ```
+### 🌐 Pure HTML Usage (via CDN)
+
+You can use the icons directly in your HTML by loading the Web Component from a CDN:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal SVG Icon from CDN</title>
+
+    <!-- ✅ Load the Web Component directly from unpkg CDN -->
+    <script type="module" src="https://unpkg.com/universal-svg-icon-test@0.0.3/dist/web-component.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      universal-svg-icons {
+        width: 64px;
+        height: 64px;
+        stroke: black;
+        stroke-width: 2;
+        fill: none;
+        --path-fill: green;
+        margin: 1rem;
+      }
+
+      .icon-row {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Universal SVG Icons (via CDN)</h1>
+
+    <div class="icon-row">
+      <universal-svg-icons name="check" variant="default"></universal-svg-icons>
+      <universal-svg-icons name="admin" variant="default"></universal-svg-icons>
+      <universal-svg-icons name="apple" variant="default"></universal-svg-icons>
+      <universal-svg-icons name="twitter" variant="default"></universal-svg-icons>
+    </div>
+  </body>
+</html>
+```
+
+Replace the `name` attribute in the `<universal-svg-icons>` element with the desired icon's name.
 
 ### 🌐 Pure HTML Usage (via CDN)
 

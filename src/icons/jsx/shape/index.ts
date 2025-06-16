@@ -1,1 +1,0 @@
-export { GridShapeIcon } from "./Grid";

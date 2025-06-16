@@ -22,7 +22,7 @@ export const IconWrapper = ({
   fill = "none",
   stroke = "none",
   strokeWidth = "1",
-  path,
+  path = "",
   pathFill = "currentColor",
   fillRule = "evenodd",
   clipRule = "evenodd",
@@ -37,12 +37,12 @@ export const IconWrapper = ({
       viewBox="${viewBox}" 
       fill="${fill}" 
       stroke="${stroke}" 
-      stroke-width="${strokeWidth}" 
+      strokeWidth="${strokeWidth}" 
       xmlns="http://www.w3.org/2000/svg" 
       onclick="${onClick ? `(${onClick.toString()})()` : ""}"
     >
       <g clip-path="${clipPath}">
-        <path fill="${pathFill}" fill-rule="${fillRule}" clip-rule="${clipRule}" d="${path}" />
+        <path fill="${pathFill}" fillRule="${fillRule}" clipRule="${clipRule}" d="${path}" />
       </g>
     </svg>
   `;

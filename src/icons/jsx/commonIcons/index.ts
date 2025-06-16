@@ -34,6 +34,7 @@ export { ProIcon } from "./Pro";
 export { ProfilIcon } from "./Profil";
 export { SettingsIcon } from "./Settings";
 export { SuccessIcon } from "./Success";
+export { SupportIcon } from "./Support";
 export { TableIcon } from "./Table";
 export { TextIcon } from "./Text";
 export { UiIcon } from "./Ui";

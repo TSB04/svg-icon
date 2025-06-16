@@ -43,13 +43,10 @@ import { IconWrapper, getCheckIconPath, CheckIcon } from "universal-svg-icons";
 export default function App() {
   return (
     <>
-      <IconWrapper
-        path={getCheckIconPath()}
-        pathFill="black"
-        width="32"
-        height="32"
-      />
-      <CheckIcon width="32" height="32" pathFill="black" />
+      ...
+      <CheckIcon />
+      <CheckIcon variant="filled" />
+      ...
     </>
   );
 }
@@ -111,6 +108,7 @@ export class AppComponent {
   checkIconPath = getCheckIconPath();
 }
 ```
+
 ### 🌐 Pure HTML Usage (via CDN)
 
 You can use the icons directly in your HTML by loading the Web Component from a CDN:
@@ -124,7 +122,10 @@ You can use the icons directly in your HTML by loading the Web Component from a 
     <title>Universal SVG Icon from CDN</title>
 
     <!-- ✅ Load the Web Component directly from unpkg CDN -->
-    <script type="module" src="https://unpkg.com/universal-svg-icon-test@0.0.3/dist/web-component.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/universal-svg-icon-test@0.0.3/dist/web-component.js"
+    ></script>
 
     <style>
       body {
@@ -158,7 +159,10 @@ You can use the icons directly in your HTML by loading the Web Component from a 
       <universal-svg-icons name="check" variant="default"></universal-svg-icons>
       <universal-svg-icons name="admin" variant="default"></universal-svg-icons>
       <universal-svg-icons name="apple" variant="default"></universal-svg-icons>
-      <universal-svg-icons name="twitter" variant="default"></universal-svg-icons>
+      <universal-svg-icons
+        name="twitter"
+        variant="default"
+      ></universal-svg-icons>
     </div>
   </body>
 </html>
@@ -170,19 +174,19 @@ Replace the `name` attribute in the `<universal-svg-icons>` element with the des
 
 ## 🛠️ API Reference
 
-| Prop           | Type                                 | Default        | Description                   |
-| -------------- | ------------------------------------ | -------------- | ----------------------------- |
-| `className`    | `string`                             | `fill-current` | CSS class for the SVG         |
-| `width`        | `string`                             | `24`           | Width of the icon             |
-| `height`       | `string`                             | `24`           | Height of the icon            |
-| `viewBox`      | `string`                             | `0 0 24 24`    | ViewBox of the SVG            |
-| `fill`         | `string`                             | `none`         | Fill color of the SVG element |
-| `fillRule`     | `"evenodd","nonzero", "inherit"`     | `evenodd`      | Fill rule                     |
-| `clipRule`     | `string`                             | `evenodd`      | Clip rule                     |
-| `path`         | `string`                             | `""`           | SVG path data                 |
-| `pathFill`     | `string`                             | `""`           | Fill color for the path       |
-| `clipPath`     | `string`                             | `""`           | Clip path reference           |
-| `defsClipPath` | `React.ReactNode`                    | `<></>`        | Clip path definitions         |
+| Prop           | Type                             | Default        | Description                   |
+| -------------- | -------------------------------- | -------------- | ----------------------------- |
+| `className`    | `string`                         | `fill-current` | CSS class for the SVG         |
+| `width`        | `string`                         | `24`           | Width of the icon             |
+| `height`       | `string`                         | `24`           | Height of the icon            |
+| `viewBox`      | `string`                         | `0 0 24 24`    | ViewBox of the SVG            |
+| `fill`         | `string`                         | `none`         | Fill color of the SVG element |
+| `fillRule`     | `"evenodd","nonzero", "inherit"` | `evenodd`      | Fill rule                     |
+| `clipRule`     | `string`                         | `evenodd`      | Clip rule                     |
+| `path`         | `string`                         | `""`           | SVG path data                 |
+| `pathFill`     | `string`                         | `""`           | Fill color for the path       |
+| `clipPath`     | `string`                         | `""`           | Clip path reference           |
+| `defsClipPath` | `React.ReactNode`                | `<></>`        | Clip path definitions         |
 
 ---
 
@@ -190,42 +194,50 @@ Replace the `name` attribute in the `<universal-svg-icons>` element with the des
 
 You can import icons as raw paths or JSX components:
 
-| Icon Name       | Path Import Name        | JSX Component        |
-| --------------- | ----------------------- | -------------------- |
-| 🛡️ Admin        | `getAdminIconPath`      | `<AdminIcon />`      |
-| 🏀 Basketball   | `getBasketBallIconPath` | `<BasketBallIcon />` |
-| ✅ Check        | `getCheckIconPath`      | `<CheckIcon />`      |
-| 📅 Calendar     | `getCalendarIconPath`   | `<CalendarIcon />`   |
-| 📷 Cam          | `getCamIconPath`        | `<CamIcon />`        |
-| 📊 Chart        | `getChartIconPath`      | `<ChartIcon />`      |
-| 💬 Chat         | `getChatIconPath`       | `<ChatIcon />`       |
-| ⏰ Clock        | `getClockIconPath`      | `<ClockIcon />`      |
-| 📇 Contact      | `getContactIconPath`    | `<ContactIcon />`    |
-| 📉 Dashboard    | `getDashboardIconPath`  | `<DashboardIcon />`  |
-| ⋮ Dots           | `getDotsIconPath`       | `<DotsIcon />`       |
-| ❌ Error        | `getErrorIconPath`      | `<ErrorIcon />`      |
-| 👁️ Eye          | `getEyeIconPath`        | `<EyeIcon />`        |
-| 📝 Form         | `getFormIconPath`       | `<FormIcon />`       |
-| ℹ️ Info         | `getInfoIconPath`       | `<InfoIcon />`       |
-| 🏫 Institutes   | `getInstitutsIconPath`  | `<InstitutsIcon />`  |
-| 🔒 Lock         | `getLockIconPath`       | `<LockIcon />`       |
-| ✉️ Mail         | `getMailIconPath`       | `<MailIcon />`       |
-| ☰ Menu          | `getMenuIconPath`       | `<MenuIcon />`       |
-| ➡️ Next         | `getNextIconPath`       | `<NextIcon />`       |
-| ✒️ Pen          | `getPenIconPath`        | `<PenIcon />`        |
-| 📞 Phone        | `getPhoneIconPath`      | `<PhoneIcon />`      |
-| 🌀 Portal       | `getPortalIconPath`     | `<PortalIcon />`     |
-| ⬅️ Previous     | `getPreviousIconPath`   | `<PreviousIcon />`   |
-| 👨‍💼 Pro          | `getProIconPath`        | `<ProIcon />`        |
-| 🧑 Profile      | `getProfilIconPath`     | `<ProfilIcon />`     |
-| ⚙️ Settings     | `getSettingsIconPath`   | `<SettingsIcon />`   |
-| ✅ Success      | `getSuccessIconPath`    | `<SuccessIcon />`    |
-| 🛠️ Support      | `getSupportIconPath`    | `<SupportIcon />`    |
-| 📋 Table        | `getTableIconPath`      | `<TableIcon />`      |
-| 🔤 Text         | `getTextIconPath`       | `<TextIcon />`       |
-| 👤 User         | `getUserIconPath`       | `<UserIcon />`       |
-| 🧩 UI           | `getUiIconPath`         | `<UiIcon />`         |
-| ⚠️ Warning      | `getWarningIconPath`    | `<WarningIcon />`    |
+| Icon Name     | Path Import Name        | JSX Component        |
+| ------------- | ----------------------- | -------------------- |
+| 🛡️ Admin      | `getAdminIconPath`      | `<AdminIcon />`      |
+| 🏦 Bank       | `getBankIconPath`       | `<BankIcon />`       |
+| 🏀 Basketball | `getBasketBallIconPath` | `<BasketBallIcon />` |
+| 🔔 Bell       | `getBellIconPath`       | `<BellIcon />`       |
+| 📅 Calendar   | `getCalendarIconPath`   | `<CalendarIcon />`   |
+| 📷 Cam        | `getCamIconPath`        | `<CamIcon />`        |
+| 📊 Chart      | `getChartIconPath`      | `<ChartIcon />`      |
+| 💬 Chat       | `getChatIconPath`       | `<ChatIcon />`       |
+| ✅ Check      | `getCheckIconPath`      | `<CheckIcon />`      |
+| ➡️ Chevron    | `getChevronIconPath`    | `<ChevronIcon />`    |
+| ⏰ Clock      | `getClockIconPath`      | `<ClockIcon />`      |
+| 📇 Contact    | `getContactIconPath`    | `<ContactIcon />`    |
+| 📉 Dashboard  | `getDashboardIconPath`  | `<DashboardIcon />`  |
+| ⋮ Dots        | `getDotsIconPath`       | `<DotsIcon />`       |
+| ⬇️ Download   | `getDownloadIconPath`   | `<DownloadIcon />`   |
+| ❌ Error      | `getErrorIconPath`      | `<ErrorIcon />`      |
+| 👁️ Eye        | `getEyeIconPath`        | `<EyeIcon />`        |
+| ❓ FAQ        | `getFaqIconPath`        | `<FaqIcon />`        |
+| 📝 Form       | `getFormIconPath`       | `<FormIcon />`       |
+| 🟦 Grid       | `getGridIconPath`       | `<GridIcon />`       |
+| ℹ️ Info       | `getInfoIconPath`       | `<InfoIcon />`       |
+| 🏫 Institutes | `getInstitutsIconPath`  | `<InstitutsIcon />`  |
+| 🔒 Lock       | `getLockIconPath`       | `<LockIcon />`       |
+| ✉️ Mail       | `getMailIconPath`       | `<MailIcon />`       |
+| ☰ Menu       | `getMenuIconPath`       | `<MenuIcon />`       |
+| ➡️ Next       | `getNextIconPath`       | `<NextIcon />`       |
+| ✒️ Pen        | `getPenIconPath`        | `<PenIcon />`        |
+| 📞 Phone      | `getPhoneIconPath`      | `<PhoneIcon />`      |
+| 🌀 Portal     | `getPortalIconPath`     | `<PortalIcon />`     |
+| ⬅️ Previous   | `getPreviousIconPath`   | `<PreviousIcon />`   |
+| 🏷️ Price Tag  | `getPriceTagIconPath`   | `<PriceTagIcon />`   |
+| 🛡️ Privacy    | `getPrivacyIconPath`    | `<PrivacyIcon />`    |
+| 👨‍💼 Pro        | `getProIconPath`        | `<ProIcon />`        |
+| 🧑 Profile    | `getProfilIconPath`     | `<ProfilIcon />`     |
+| ⚙️ Settings   | `getSettingsIconPath`   | `<SettingsIcon />`   |
+| ✅ Success    | `getSuccessIconPath`    | `<SuccessIcon />`    |
+| 🛠️ Support    | `getSupportIconPath`    | `<SupportIcon />`    |
+| 📋 Table      | `getTableIconPath`      | `<TableIcon />`      |
+| 🔤 Text       | `getTextIconPath`       | `<TextIcon />`       |
+| 👤 User       | `getUserIconPath`       | `<UserIcon />`       |
+| 🧩 UI         | `getUiIconPath`         | `<UiIcon />`         |
+| ⚠️ Warning    | `getWarningIconPath`    | `<WarningIcon />`    |
 
 **Example Usage:**
 

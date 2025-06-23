@@ -16,6 +16,7 @@ export { DownloadIcon } from "./Download";
 export { ErrorIcon } from "./Error";
 export { EyeIcon } from "./Eye";
 export { FaqIcon } from "./Faq";
+export { FiltreIcon } from "./Filtre";
 export { FormIcon } from "./Form";
 export { GridIcon } from "./Grid";
 export { InfoIcon } from "./Info";

@@ -1,12 +1,11 @@
 export const SupportPageIcon = () => {
   return (
     <svg
-      width="212px"
-      height="212px"
-      viewBox="0 0 212 212"
+      width="300px"
+      height="300pxx"
+      viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
-      className="-mt-2"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
@@ -26,11 +25,41 @@ export const SupportPageIcon = () => {
         .cls-7 { fill: #274c77; } 
         </style>
         </defs> */}
+        {/* <!-- Face --> */}
         <path
           className="cls-5"
           d="M26.58,39.04l-3,1.29c-1.01,.43-2.15,.43-3.15,0l-3-1.29c-1.47-.63-2.42-2.08-2.42-3.68v-5.36c0-3.31,2.69-6,6-6h2c3.31,0,6,2.69,6,6v5.36c0,1.6-.95,3.05-2.42,3.68Z"
           fill="#dda15e"
         />
+        {/*  -- Left eye (ellipse with highlight) --  */}
+        <ellipse cx="19.5" cy="30.5" rx="1.2" ry="1.7" fill="#222" />
+        <ellipse
+          cx="19.4"
+          cy="30.5"
+          rx="0.3"
+          ry="0.4"
+          fill="#fff"
+          opacity="0.7"
+        />
+        {/* -- Right eye (ellipse with highlight) -- */}
+        <ellipse cx="25.5" cy="30.5" rx="1.2" ry="1.7" fill="#222" />
+        <ellipse
+          cx="25.5"
+          cy="30.4"
+          rx="0.3"
+          ry="0.4"
+          fill="#fff"
+          opacity="0.7"
+        />
+        {/* -- Smiling mouth (curve) -- */}
+        <path
+          d="M20,36 Q22,39 24,36.4"
+          stroke="#d2691e"
+          stroke-width="0.5"
+          fill="none"
+          stroke-linecap="round"
+        />
+        {/* ---- END of Face */}
         <path
           className="cls-7"
           d="M35.14,45c-1.82-1.85-4.35-3-7.14-3h-3c0,1.66-1.34,3-3,3s-3-1.34-3-3h-3c-5.52,0-10,4.48-10,10v7H28l4-14h3.14Z"

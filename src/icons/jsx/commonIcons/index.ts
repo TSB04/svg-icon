@@ -9,6 +9,7 @@ export { ChatIcon } from "./Chat";
 export { CheckIcon } from "./Check";
 export { ChevronIcon } from "./Chevron";
 export { ClockIcon } from "./Clock";
+export { CloseIcon } from "./Close";
 export { ContactIcon } from "./Contact";
 export { DashboardIcon } from "./Dashboard";
 export { DotsIcon } from "./Dots";

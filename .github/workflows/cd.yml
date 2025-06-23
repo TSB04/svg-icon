@@ -38,6 +38,10 @@ jobs:
       - name: Bump version
         run: npm version patch
 
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Push version bump and tags
         run: |
           git push origin HEAD:release
@@ -56,6 +60,16 @@ jobs:
           prerelease: false
 
       - name: Publish to NPM
-        run: npm publish --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+
+      

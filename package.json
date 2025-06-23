@@ -1,6 +1,6 @@
 {
-  "name": "universal-svg-icon",
-  "version": "0.0.1",
+  "name": "universal-svg-icon-temp",
+  "version": "0.0.9",
   "description": "A framework-agnostic customizable SVG icons collection",
   "keywords": [
     "svg",
@@ -66,7 +66,7 @@
   "homepage": "https://github.com/tsb04/universal-svg-icons#readme",
   "dependencies": {
     "lru-cache": "^11.1.0",
-    "universal-svg-icon": "file:"
+    "universal-svg-icon-temp": "file:"
   },
   "type": "module",
   "exports": {

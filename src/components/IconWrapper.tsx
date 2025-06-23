@@ -6,6 +6,8 @@ export interface IconWrapperProps {
   fill?: string;
   stroke?: string;
   strokeWidth?: string;
+  strokelinecap?: "butt" | "round" | "square";
+  strokelinejoin?: "miter" | "round" | "bevel";
   fillRule?: "evenodd" | "nonzero" | "inherit";
   clipRule?: string;
   path: string;
@@ -22,6 +24,8 @@ export const IconWrapper = ({
   fill = "none",
   stroke = "none",
   strokeWidth = "1",
+  strokelinecap = "round",
+  strokelinejoin = "round",
   path = "",
   pathFill = "currentColor",
   fillRule = "evenodd",
@@ -38,6 +42,8 @@ export const IconWrapper = ({
       fill="${fill}" 
       stroke="${stroke}" 
       strokeWidth="${strokeWidth}" 
+      strokeLinecap="${strokelinecap}" 
+      strokeLinejoin="${strokelinejoin}"
       xmlns="http://www.w3.org/2000/svg" 
       onclick="${onClick ? `(${onClick.toString()})()` : ""}"
     >

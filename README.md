@@ -163,67 +163,7 @@ You can use the icons directly in your HTML by loading the Web Component from a 
         name="twitter"
         variant="default"
       ></universal-svg-icons>
-    </div>
-  </body>
-</html>
-```
-
-Replace the `name` attribute in the `<universal-svg-icons>` element with the desired icon's name.
-
-### 🌐 Pure HTML Usage (via CDN)
-
-You can use the icons directly in your HTML by loading the Web Component from a CDN:
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Universal SVG Icon from CDN</title>
-
-    <!-- ✅ Load the Web Component directly from unpkg CDN -->
-    <script
-      type="module"
-      src="https://unpkg.com/universal-svg-icon-test@0.0.3/dist/web-component.js"
-    ></script>
-
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 2rem;
-        text-align: center;
-      }
-
-      universal-svg-icons {
-        width: 64px;
-        height: 64px;
-        stroke: black;
-        stroke-width: 2;
-        fill: none;
-        --path-fill: green;
-        margin: 1rem;
-      }
-
-      .icon-row {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Universal SVG Icons (via CDN)</h1>
-
-    <div class="icon-row">
-      <universal-svg-icons name="check" variant="default"></universal-svg-icons>
-      <universal-svg-icons name="admin" variant="default"></universal-svg-icons>
-      <universal-svg-icons name="apple" variant="default"></universal-svg-icons>
-      <universal-svg-icons
-        name="twitter"
-        variant="default"
-      ></universal-svg-icons>
+      ...
     </div>
   </body>
 </html>
@@ -333,8 +273,10 @@ npm run build
 
 ### Add a New Icon
 
-1. Add your SVG path to `/src/icons/`
-2. Export it in `/src/index.ts`
+1. Add your SVG path to `/src/icons/iconPath/` in the appropriate folder, or create a new folder if needed.
+2. Export the path in `/src/icons/iconPath/[folder]/index.ts`. For a new folder, also export it in `/src/icons/iconPath/path.ts`.
+3. Create the SVG icon component using your path in `/src/icons/jsx/[folder]/[IconName].tsx`.
+4. Export the component in `/src/icons/jsx/[folder]/index.ts`. For a new folder, create a group export file in `/src/icons/jsx/[GroupIconName].ts`.
 
 ### Create a Feature Branch
 
@@ -353,7 +295,7 @@ Then open a Pull Request on GitHub 🚀
 
 🔧 **Tip**
 
-> All icons should be designed at `24x24` with `viewBox="0 0 24 24"`.
+> All common icons should be designed at `24x24` with `viewBox="0 0 24 24"`.
 > Use the scale.py script to scale your icon's SVG path to the required size automatically.
 
 ---

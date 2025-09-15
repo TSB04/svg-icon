@@ -9,9 +9,9 @@ export const UnavailableErrorPageIcon = ({
 
   return (
     <svg
-      width="494"
-      height="156"
-      viewBox="0 0 494 156"
+      width="256px"
+      height="256px"
+      viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -1,3 +1,4 @@
+export { AlertPageIcon } from "./Alert";
 export { MaintenancePageIcon } from "./Maintenance";
 export { SupportPageIcon } from "./Support";
 export { InternalErrorPageIcon } from "./InternalError";
